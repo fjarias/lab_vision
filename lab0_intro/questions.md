@@ -6,13 +6,6 @@
 2.  What is the output of the ``cal`` command?
 	> El comando muestra el calendario del mes en curso en la fecha del sistema.
 
-   	February 2015
-	Su Mo Tu We Th Fr Sa
- 	1  2  3  4  5  6  7
- 	8  9 10 11 12 13 14
-	15 16 17 18 19 20 21
-	22 23 24 25 26 27 28        
-
 # Homework Questions
 
 1.  What is the ``grep``command?
@@ -33,63 +26,31 @@ Este comando busca todas las imágenes en el directorio actual (sipi_images) omi
     >   Los archivos temporales xxxxxx tipicamente se ubican en el directorio $Home/tmp.
 
 6.  How many files with ``gnu`` in its name are in ``/usr/src ``
-    >   Este conteo se puede realizar con el comando: 
-
-find /usr/src -name *gnu*.* | wc -l
-
-Compuesto por dos partes: primero la búsqueda en el directorio “dir” de todos los archivos que contengan la expresión “gnu” en su nombre, y al resultado de esta búsqueda se le hace un conteo de lineas mediante un shell pipe con el comando wc -l.
+    >   Este conteo se puede realizar con el comando: find /usr/src -name *gnu*.* | wc -l Compuesto por dos partes: primero la búsqueda en el directorio “dir” de todos los archivos que contengan la expresión “gnu” en su nombre, y al resultado de esta búsqueda se le hace un conteo de lineas mediante un shell pipe con el comando wc -l.
 
 7.  How many files contain ``gpl`` inside in ``/usr/src``
-    >    Este conteo se puede realizar con el comando:
-
-grep -r “gpl” /usr/src | wc -l
-
-Compuesto por dos partes:  la búsqueda recursiva dentro de los archivos contenidos en el directorio “dir” y al resultado de esta búsqueda se le hace un conteo de lineas mediante un shell pipe con el comando wc -l.
+    >    Este conteo se puede realizar con el comando: grep -r “gpl” /usr/src | wc -l Compuesto por dos partes:  la búsqueda recursiva dentro de los archivos contenidos en el directorio “dir” y al resultado de esta búsqueda se le hace un conteo de lineas mediante un shell pipe con el comando wc -l.
 
 8.  What does the ``cut`` command do?
     >   Este comando se usa con propósito de procesamiento de textos, sirve para extraer una porción de texto de un archivo o de la salida de texto de un proceso mediante shell pipes, especificando las columnas que delimitan la porción de texto, o para el caso de archivos delimitados por algún carácter (por ejemplo la coma), los campos en cuestión. 
 
 9.  What does the ``wget`` command do?
-    >   Este comando se utiliza para descargar contenido de forma desatendida desde una red por medio de los protocolos HTTP, HTTPS y protocolos FTP, también permite descargar enlaces a sitios Web para ser vistos fuera de linea. 
-
-Ejemplo: wget http://www.site.com/file.zip
+    >   Este comando se utiliza para descargar contenido de forma desatendida desde una red por medio de los protocolos HTTP, HTTPS y protocolos FTP, también permite descargar enlaces a sitios Web para ser vistos fuera de linea. Ejemplo: wget http://www.site.com/file.zip
 
 10.  What does the ``diff`` command do?
-    >   Este comando permite comparar dos archivos señalando sus diferencias imprimiendo las lineas discrepantes
-
-Ejemplo: diff file1.txt file2.txt
+    >   Este comando permite comparar dos archivos señalando sus diferencias imprimiendo las lineas discrepantes Ejemplo: diff file1.txt file2.txt
 
 11.  How many users exist in *Guitaca*?
-    >   Este conteo se puede generar con el siguiente comando:
-
-cat /etc/passwd | wc -l
-
-Compuesto por dos partes: El listado de los usuarios que se encuentra en el archivo passwd en el directorio /etc, y al resultado de este listado se le hace un conteo de lineas mediante un shell pipe con el comando wc -l.
+    >   Este conteo se puede generar con el siguiente comando: cat /etc/passwd | wc -l Compuesto por dos partes: El listado de los usuarios que se encuentra en el archivo passwd en el directorio /etc, y al resultado de este listado se le hace un conteo de lineas mediante un shell pipe con el comando wc -l.
 
 12. What command will produce a table of Users and Shells sorted by shell (tip: using ``cut`` and ``sort``)
-    >   La tabla se puede generar con el comando:
-
-cat /etc/passwd | cut -d: -f1,7 | sort -k2
-
-Compuesto por 3 partes: El listado de los usuarios que se encuentra en el archivo passwd en el directorio /etc; de este listado se extraen con el comando “cut”, las columnas 1 y 7 correspondientes al nombre de usuario (LoginID) y shell usado respectivamente, y finalmente al resultado de la selección se le ordena por la segunda columna es decir por el shell con el comando “sort”.
+    >   La tabla se puede generar con el comando: cat /etc/passwd | cut -d: -f1,7 | sort -k2 Compuesto por 3 partes: El listado de los usuarios que se encuentra en el archivo passwd en el directorio /etc; de este listado se extraen con el comando “cut”, las columnas 1 y 7 correspondientes al nombre de usuario (LoginID) y shell usado respectivamente, y finalmente al resultado de la selección se le ordena por la segunda columna es decir por el shell con el comando “sort”.
 
 13. What command will produce the number of users with shell ``/sbin/nologin`` (tip: using ``grep`` and ``wc``)
-    >   Este conteo se puede generar con el siguiente comando:
-
-cat /etc/passwd | cut -d: -f7 | grep “/sbin/nologin” | wc -l
-
-Compuesto por cuatro partes: El listado de los usuarios que se encuentra en el archivo passwd en el directorio /etc; de este listado se extrae con el comando “cut”, la columnas 7 correspondiente al shell usado; en esta selección se realiza la búsqueda del shell “sbin/nologin” con el comando “grep”, y finalmente se hace el conteo de lineas con el comando “wc -l”
+    >   Este conteo se puede generar con el siguiente comando: cat /etc/passwd | cut -d: -f7 | grep “/sbin/nologin” | wc -l Compuesto por cuatro partes: El listado de los usuarios que se encuentra en el archivo passwd en el directorio /etc; de este listado se extrae con el comando “cut”, la columnas 7 correspondiente al shell usado; en esta selección se realiza la búsqueda del shell “sbin/nologin” con el comando “grep”, y finalmente se hace el conteo de lineas con el comando “wc -l”
 
 14.  What is the name of the linux distribution running on *Guitaca*?
-    >   Esta información puede obtenerse con el comando:
-
-cat /etc/*-release
-
-ó
-
-lsb_release -a
-
-Tomado de: http://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/
+    >   Esta información puede obtenerse con el comando: cat /etc/*-release ó lsb_release -a Tomado de: http://www.cyberciti.biz/faq/find-linux-distribution-name-version-number/
 
 15. Create a script for finding duplicate images based on their content (tip: hash or checksum)
     You may look in the internet for ideas, but please indicate the source of any code you use
@@ -100,10 +61,6 @@ Tomado de: http://www.cyberciti.biz/faq/find-linux-distribution-name-version-num
     >   A esta linea se le conoce como “bang” o “Shebang” y su propósito es especificar la ruta absoluta del interprete de Bash que ejecutará el script.
 
 17. How many unique images are in the ``sipi_images`` folder?
-    >   De acuerdo con el script del punto 15 hay 3 imagenes repetidas, por lo que el numero de imagenes unicas seria el numero total de imagenes menos 3
-
-find sipi_images *.tiff | wc -l
-
-que es 215, entonces 215 - 3 = 212
+    >   De acuerdo con el script del punto 15 hay 3 imagenes repetidas, por lo que el numero de imagenes unicas seria el numero total de imagenes menos 3 find sipi_images *.tiff | wc -l que es 215, entonces 215 - 3 = 212
     
 
