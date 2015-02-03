@@ -4,7 +4,7 @@
     >  Una URL (Uniform Resource Locator) es un identificador que permite ubicar un recurso en una red, en el caso de Git se refiere al identificador con el cual se puede ubicar un clon de un repositorio. Un clon en Git  es una copia funcional de un repositorio para todos sus archivos con sus respectivas historias de cambios y es perfectamente funcional para reemplazar al repositorio original en caso de una perdida de datos.
 
 2.  What is the output of the ``cal`` command?
-	El comando muestra el calendario del mes en curso en la fecha del sistema.
+	> El comando muestra el calendario del mes en curso en la fecha del sistema.
 
    	February 2015
 	Su Mo Tu We Th Fr Sa
