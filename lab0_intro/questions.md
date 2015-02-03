@@ -55,6 +55,7 @@ Este comando busca todas las imágenes en el directorio actual (sipi_images) omi
 15. Create a script for finding duplicate images based on their content (tip: hash or checksum)
     You may look in the internet for ideas, but please indicate the source of any code you use
     Save this script as ``find_duplicates.sh`` in this directory and commit your changes to github
+	> https://github.com/fjarias/lab_vision/blob/master/lab0_intro/find_duplicates.sh
 
 
 16. What is the meaning of ``#! /bin/bash`` at the start of scripts?
