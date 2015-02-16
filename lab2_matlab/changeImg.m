@@ -1,5 +1,6 @@
+
 function changeImg(fileName)
     img = imread(fileName,'TIFF');
-    newFileName = strcat(fileName, '_new');
-    imwrite(img,newFileName,'PNG');
+    newFileName = strcat(fileName, '.jpg');
+    imwrite(img,newFileName,'JPG');
 end
