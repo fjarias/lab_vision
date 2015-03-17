@@ -1,5 +1,5 @@
 % Obtener la lista de las imagenes jpg en el directorio de train
-[status,cmdout]= system('find ./train -name *.jpg | cut -d''/'' -f3');
+[status,cmdout]= system('find ./test -name *.jpg | cut -d''/'' -f3');
 % Convertir en arreglo el listado
 pics = strsplit(cmdout,'jpg');
 % Obtener el numero de imagenes
@@ -11,7 +11,7 @@ numPics = dimPics(2);
 i = 1;
 while i < numPics
     fileName = strtrim(pics{1,i});
-    imgPath = strcat('./train/', strtrim(pics{1,i}), 'jpg');
+    imgPath = strcat('./test/', strtrim(pics{1,i}), 'jpg');
     
     % Cargar la imagen
     oi =  imread(imgPath);
