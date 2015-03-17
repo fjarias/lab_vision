@@ -24,7 +24,11 @@ while i < numPics
         
     % Guardar el archivo imgName.mat
     matFileName = strcat(fileName, 'mat');
-    save(matFileName, 'km2', 'km3', 'km4');
+    
+    s = struct('km2',km2,'km3',km3,'km4',km4);
+    segs = struct2cell(s);
+    save(matFileName, 'segs');
+
     
     i = i + 1;
 end
