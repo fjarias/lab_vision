@@ -1,4 +1,4 @@
-function my_segmentation = segment_by_clustering(rgb_image, feature_space, clusteringmethod, numclusters)
+function my_segmentation = segment_by_clustering(rgb_image, feature_space, clustering_method, numclusters)
 
     %http://www.mathworks.com/help/images/examples/color-based-segmentation-using-k-means-clustering.html
     %Leer la imagen a segmentar
@@ -15,6 +15,7 @@ function my_segmentation = segment_by_clustering(rgb_image, feature_space, clust
     [cluster_idx, cluster_center] = kmeans(ab,nColors,'distance','sqEuclidean','Replicates',3);
     pixel_labels = reshape(cluster_idx,nrows,ncols);
     %imshow(pixel_labels,[]), title('image labeled by cluster index');
-    my_segmentation = pixel_labels;
+    int_pixel_labels = uint8(pixel_labels);
+    my_segmentation = int_pixel_labels;
 end
 
